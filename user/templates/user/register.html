@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div>
+        <form  method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <br>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
+<!-- 
+    In our register.html template; we create a <form/> tag, add our POST request and include our csrf_token and pass in our context form
+    <form method="POST">
+    {% csrf_token %} 
+    {{form.as_p}}
+    <br>
+    <input type="submit" value ="Register"/> 
+  </form>
+  This would render out nicely a form with our six(6) fields and the POST request would be handled and stored in our database.
+  This method displays the power of the UserCreationForm and takes away the need to manually create a raw HTML form with all the applicable fields.
+ -->
